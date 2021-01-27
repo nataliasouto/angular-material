@@ -13,6 +13,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormComponent } from './components/form/form.component';
 
 
 
@@ -20,7 +22,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   declarations: [
     AppComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatIconModule,
     MatButtonModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
