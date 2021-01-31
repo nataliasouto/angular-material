@@ -1,7 +1,15 @@
-<div mat-dialog-actions>
-    <button mat-button (click)="cancel()">
-        Cancelar
-    </button>
-
-</div
->
+<h1 mat-dialog-title>
+    Reunião
+</h1>
+<form [[formGroup]="form"]>
+    <input type="hidden" formControlName="id" name="id">
+    <mat-form-field class="exemplo-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="formName" name="formName">
+    </mat-form-field>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
+</form>
