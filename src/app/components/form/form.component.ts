@@ -12,7 +12,7 @@ export class FormComponent implements OnInit {
   public form!: FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
     public dialogRef: MatDialogRef<FormComponent>,
    // @Inject(MAT_DIALOG_DATA) public data: string
   ) { }

@@ -7,6 +7,34 @@
         <mat-label>Nome</mat-label>
         <input matInput placeholder="Nome" formControlName="formName" name="formName">
     </mat-form-field>
+
+    <mat-form-field class="exemplo-full-width">
+        <mat-label>Sujeito</mat-label>
+        <input matInput placeholder="Sujeito" formControlName="formSubject" name="formSubject">
+    </mat-form-field>
+
+    <mat-form-field class="exemplo-full-width">
+        <mat-label>Responsável</mat-label>
+        <input matInput placeholder="Responsável" formControlName="formResponsible" name="formResponsible">
+    </mat-form-field>
+
+    <div fxLayout="row wrap">
+        <div fxFlex="50" fxFill fxLayoutAlign="start center">
+            <mat-form-field>
+                <mat-label>Meeting Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="meetingDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div fxFlex="50" fxFill fxLayoutAlign="start center">
+          <mat-form-field>
+              <mat-label>Meeting Time</mat-label>
+              <input matInput type="time" placeholder="" formControlName="meetingTime" #time/>
+          </mat-form-field>
+        </div>
+      </div>  
+
     <div mat-dialog-actions>
         <button mat-button (click)="cancel()">
             Cancelar
