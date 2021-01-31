@@ -30,6 +30,7 @@ export class FormComponent implements OnInit {
 
   cancel(): void {
     this.dialogRef.close();
-
   }
+
+  save(){}
 }

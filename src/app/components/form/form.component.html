@@ -1,43 +1,40 @@
-<h1 mat-dialog-title>
-    Reunião
-</h1>
+<h1 mat-dialog-title>New Meeting</h1>
 <form class="example-form" [formGroup]="meetingForm">
-    <input type="hidden" formControlName="id" name="id">
-    <mat-form-field class="exemplo-full-width">
-        <mat-label>Nome</mat-label>
-        <input matInput placeholder="Nome" formControlName="formName" name="formName">
-    </mat-form-field>
+  <input type="hidden" formControlName="id" name="id">
+  <mat-form-field class="example-full-width">
+      <mat-label>Nome da Reunião</mat-label>
+      <input matInput placeholder="" formControlName="formName" name="meetingName">
+  </mat-form-field>
 
-    <mat-form-field class="exemplo-full-width">
-        <mat-label>Sujeito</mat-label>
-        <input matInput placeholder="Sujeito" formControlName="formSubject" name="formSubject">
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+      <mat-label>Assunto da Reunião</mat-label>
+      <input matInput placeholder="" formControlName="formSubject" name="meetingSubject">
+  </mat-form-field>
 
-    <mat-form-field class="exemplo-full-width">
-        <mat-label>Responsável</mat-label>
-        <input matInput placeholder="Responsável" formControlName="formResponsible" name="formResponsible">
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Responsável da Reunião</mat-label>
+    <input matInput placeholder="" formControlName="formResponsible" name="meetingResponsible">
+  </mat-form-field>
 
-    <div fxLayout="row wrap">
-        <div fxFlex="50" fxFill fxLayoutAlign="start center">
-            <mat-form-field>
-                <mat-label>Meeting Date</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="meetingDate">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-        </div>
-        <div fxFlex="50" fxFill fxLayoutAlign="start center">
-          <mat-form-field>
-              <mat-label>Meeting Time</mat-label>
-              <input matInput type="time" placeholder="" formControlName="meetingTime" #time/>
-          </mat-form-field>
-        </div>
-      </div>  
-
-    <div mat-dialog-actions>
-        <button mat-button (click)="cancel()">
-            Cancelar
-        </button>
+  <div fxLayout="row wrap">
+    <div fxFlex="50" fxFill fxLayoutAlign="start center">
+        <mat-form-field>
+            <mat-label>Data da Reunião</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="formDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
     </div>
-</form>
+    <div fxFlex="50" fxFill fxLayoutAlign="start center">
+      <mat-form-field>
+          <mat-label>Hora da Reunião</mat-label>
+          <input matInput type="time" placeholder="" formControlName="formTime" #time/>
+      </mat-form-field>
+    </div>
+  </div>  
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="primary" [disabled]="!meetingForm.valid" (click)="save()">Salvar</button>
+  </div>
+</form>  
