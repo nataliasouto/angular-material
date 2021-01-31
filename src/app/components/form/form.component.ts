@@ -9,7 +9,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class FormComponent implements OnInit {
 
-  public form!: FormGroup;
+  public meetingForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.form =  this.fb.group({
+    this.meetingForm =  this.fb.group({
       id : [null],
       formName : ['',Validators.required],
       formSubject : ['',Validators.required],
