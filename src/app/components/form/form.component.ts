@@ -51,13 +51,23 @@ export class FormComponent implements OnInit {
     });
     this.dialogRef.close(true);
     this.meetingForm.reset();
-    window.location.reload();
-    
+   // window.location.reload();   
   }
 
   update(){
-    
+    this.service.update(this.meetingForm.value).subscribe( result => {
+      console.log('Meeting insert ', result);
+    },
+    err => {
+      console.log('Err', err);
+    });
+    this.dialogRef.close(true);
+    this.meetingForm.reset();
+  //  window.location.reload();   
   }
-}
+
+
+  }
+
 
 
