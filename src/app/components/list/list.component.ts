@@ -11,7 +11,7 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  displayedColumns: string[] = ['formName', 'formSubject', 'formResponsible'];
+  displayedColumns: string[] = ['formName', 'formSubject', 'formResponsible', 'formDate', 'formTime', 'action'];
   meetings = [];
   length: number;
   totalRecordsPerPage: number = 5;
@@ -32,12 +32,12 @@ export class ListComponent implements OnInit {
     this.service.getAll(pageNumber,this.totalRecordsPerPage,sortField,filters).subscribe(meetingsReturn => {
           this.meetings =  meetingsReturn['meeting'];
           this.length = meetingsReturn['page'].size;
-      }, error => {
+      }, err => {
         this.meetings = [];
-        console.log('Error ',error);
-        console.log('Error status ',error.status);
-        console.log('Error error ',error.error);
-        console.log('Error headers ',error.headers);
+        console.log('Erro ', err);
+        console.log('Erro status ',err.status);
+        console.log('Erro error ',err.error);
+        console.log('Erro headers ',err.headers);
       });
   }
 }

@@ -51,7 +51,7 @@ export class FormComponent implements OnInit {
     });
     this.dialogRef.close(true);
     this.meetingForm.reset();
-   // window.location.reload();   
+    window.location.reload();   
   }
 
   update(){
@@ -63,7 +63,7 @@ export class FormComponent implements OnInit {
     });
     this.dialogRef.close(true);
     this.meetingForm.reset();
-  //  window.location.reload();   
+    window.location.reload();   
   }
 
 
